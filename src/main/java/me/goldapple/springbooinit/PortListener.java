@@ -15,6 +15,5 @@ public class PortListener implements ApplicationListener<ServletWebServerInitial
         ServletWebServerApplicationContext applicationContext = servletWebServerInitializedEvent.getApplicationContext();
         WebServer webServer = applicationContext.getWebServer();
         System.out.println(webServer.getPort());
-
     }
 }
