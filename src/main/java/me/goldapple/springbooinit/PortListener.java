@@ -1,15 +1,15 @@
-#### 스프링 부트 원리
-##### 내장 웹 서버 응용 1부 : 컨테이너와 포트
+package me.goldapple.springbooinit;
 
+import org.springframework.boot.web.server.WebServer;
+import org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext;
+import org.springframework.boot.web.servlet.context.ServletWebServerInitializedEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
-```properties
-server.port=0 /*포트번호 랜덤 생성*/
-```
-```java
 @Component
 public class PortListener implements ApplicationListener<ServletWebServerInitializedEvent>{
-    //webServer가 실해후 콜백 해준다.
-    
+
     @Override
     public void onApplicationEvent(ServletWebServerInitializedEvent servletWebServerInitializedEvent){
         ServletWebServerApplicationContext applicationContext = servletWebServerInitializedEvent.getApplicationContext();
@@ -18,6 +18,3 @@ public class PortListener implements ApplicationListener<ServletWebServerInitial
 
     }
 }
-
-```
-![image](https://user-images.githubusercontent.com/40969203/108622271-f464a200-747a-11eb-8926-b3e733a35737.png)
