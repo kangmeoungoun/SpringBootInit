@@ -1,10 +1,7 @@
 #### 스프링 부트 원리
-##### 자동 설정 이해
+##### 자동 설정 만들기 1부 : Start 와 AutoConfigure
 
-```java
-@EnableAutoConfiguration
-```
-spring-boot-autoconfigure-2.4.1.jar/META-INF/spring.factories 에
-org.springframework.boot.autoconfigure.EnableAutoConfiguration
-의 키의 값들이 autoconfiguration 의대상이된다 예네들 전부 @Configuration 어노테이션을 달고 있다.
-즉 예네들을 전부 다 설정파일들이다.전부다 빈으로 등록된느것은 아니고 조건에 따라 다르다.
+스프링 빈등록 방법은 Component scan 을먼저하고 그후 AutoConfigure
+
+![image](https://user-images.githubusercontent.com/40969203/108618692-6d57ff80-7463-11eb-93c8-c1965018e392.png)
+![image](https://user-images.githubusercontent.com/40969203/108618694-7052f000-7463-11eb-800a-f414be3f2da4.png)
