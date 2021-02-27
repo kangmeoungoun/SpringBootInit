@@ -1,28 +1,23 @@
 #### 스프링 부트 활용
-##### 외부설정 2부(1)
+##### 프로파일
 
-```java
-@Getter
-@Setter
-@ConfigurationProperties("kmo")
-@Component
-public class goldappleProperties{
-    private String name;
-    private int age;
-    private String fullName;
-}
-```
+
+java -jar ./target/springbooinit-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
 ```properties
-kmo.name=goldapple
-kmo.age=${random.int}
-kmo.fullName = ${kmo.name} me
+
+application.properties
+spring.profiles.active=test
+goldapple.name=kmo
+goldapple.age=19
+
+application-pord.properties
+goldapple.name=kmo prrod
+
+
+## 프로파일 prod 설정
+name : kmo prrod
+age : 19
+## 기존에 있던것들은 오바라이드
 
 ```
-```java
-@SpringBootApplication
-@EnableConfigurationProperties(goldappleProperties.class)
-
-EnableConfigurationProperties 예는 자동으로 스프링부트가 넣어준다. 생략 가능.
-```
-
-![image](https://user-images.githubusercontent.com/40969203/109155708-3cedc980-77b3-11eb-884b-a0e672307b03.png)
+![image](https://user-images.githubusercontent.com/40969203/109385433-1b1d4f80-7937-11eb-9711-1e4fa13ce5ba.png)
