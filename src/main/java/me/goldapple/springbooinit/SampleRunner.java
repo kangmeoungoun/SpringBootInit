@@ -1,6 +1,8 @@
 package me.goldapple.springbooinit;
 
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -16,13 +18,13 @@ public class SampleRunner implements ApplicationRunner{
 
     @Autowired
     private GoldAppleProperties goldAppleProperties;
-
+    private Logger logger = LoggerFactory.getLogger(SampleRunner.class);
     @Autowired
     Environment environment;
 
     public void run(ApplicationArguments args) throws Exception{
-        System.out.println("hello = " + hello);
-        System.out.println("goldAppleProperties = " + goldAppleProperties.getName());
-        System.out.println("goldAppleProperties = " + goldAppleProperties.getAge());
+        logger.info("==================================");
+        logger.info("hello = " + hello);
+        logger.info("goldAppleProperties = " + goldAppleProperties.getName());
     }
 }
