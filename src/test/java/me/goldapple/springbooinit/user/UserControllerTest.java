@@ -35,7 +35,7 @@ class UserControllerTest{
     }
 
     @Test
-    @DisplayName("JSON 형태로 user 를만드는 테스트")
+    @DisplayName("JSON,XML 형태로 user 를만드는 테스트")
     void createUser_JSON() throws Exception{
         //given
         ObjectMapper mapper = new ObjectMapper();
@@ -47,13 +47,15 @@ class UserControllerTest{
         //when
         mockMvc.perform(post("/users/create")
                 .contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_XML)
                 .content(userJson))
                 .andExpect(status().isOk())
                 .andDo(print())
                 //then
-                .andExpect(jsonPath("$.username",is(equalTo("goldapple"))))
-                .andExpect(jsonPath("$.password",is(equalTo("123"))));
+                .andExpect(xpath("User/username").string("goldapple"))
+                .andExpect(xpath("User/password").string("123"))
+                ;
+
 
     }
 }

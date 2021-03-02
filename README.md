@@ -1,4 +1,4 @@
 #### 스프링 부트 활용
-##### 스프링 웹 MVC 2부: HttpMessageConverters
+##### 스프링 웹 MVC 3부: ViewResolve
 
-![image](https://user-images.githubusercontent.com/40969203/109654261-57ee7e00-7ba5-11eb-8428-9986d3cd50f6.png)
+![image](https://user-images.githubusercontent.com/40969203/109656755-1ad7bb00-7ba8-11eb-88d0-a6c1f6ad7636.png)
