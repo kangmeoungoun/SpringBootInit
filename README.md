@@ -1,6 +1,13 @@
 #### 스프링 부트 활용
-##### 스프링 웹 MVC 5부: 웹 JAR
+##### 스프링 웹 MVC 6부: index 페이지와 파비콘
 
-JAR 파일 POM.XML 에 추가해서 제이쿼리 부트스트랩 등등 의존성 추가 할수 있다.
 
-![image](https://user-images.githubusercontent.com/40969203/109816154-c3068600-7c73-11eb-9528-2d0ba2cee76c.png)
+whitelabel Erorr Page 는 톰캣에서 보여주는게 아니라 스프링 부트에서 에러 핸들러에서 만들어준 view
+
+- 루트를 요청했을때 보여주는 방법 :정적, 동적
+    - 정적 : resources/static/index.html  애플리케이션 루트 페이지 정적 웰컴페이지 
+    
+- 파비콘 : 타이틀 왼쪽 이미지
+    - https://favicon.io : 파비콘 이미지 다운 URL
+    - favicon.ico  : resource 밑에 있으면 된다.
+    
