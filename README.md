@@ -1,9 +1,4 @@
 #### 스프링 부트 활용
-##### 스프링 웹 MVC 9부: ExceptionHandler
+##### 스프링 웹 MVC 10부: Spring HATEOAS
 
-resources/static/error/400.html
-resources/static/error/5xx.html 두루뭉실하게
-ExcetionHandler 로 처리
-
-거기서 못잡은 에러는  BasicErrorController 처리
-
+![image](https://user-images.githubusercontent.com/40969203/110228451-af457300-7f44-11eb-983d-de18c8c6f4ca.png)

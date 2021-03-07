@@ -1,5 +1,6 @@
 package me.goldapple.springbooinit.user;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlHeading1;
@@ -22,12 +23,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class SampleControllerTest{
 
     @Autowired
-    WebClient webClient;
+    MockMvc mockMvc;
 
     @Test
     void hello() throws Exception{
-        HtmlPage page = webClient.getPage("/hello");
-        HtmlHeading1 span = page.getFirstByXPath("//h1");
-        assertThat(span.getTextContent()).isEqualToIgnoringCase("goldapple");
+        mockMvc.perform(get("/hello"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$._links.self").exists());
     }
 }
