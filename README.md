@@ -1,13 +1,17 @@
 #### 스프링 부트 활용
-##### 스프링 데이터 2부:인메모리 데이터베이스
+##### 스프링 데이터 3부:MySQL
 
-인메모리 DB 설정이 매번 새로운 url 로 만들어져서  아래 설정을 주면 
-- jdbc:h2:mem:4fea8c2b-f00c-4870-996a-06156b3e4db3
-   -> jdbc:h2:mem:testdb!!!!
-        변경된다
-```properties
-spring.datasource.generate-unique-name=false
+DBCP 
+```java
+Connection connection = dataSource.getConnection() 
+//이과정이 상당히 여러가지 일들이 벌어지는 과정
+//그래서 커넥션을 미리 만들어 놓는다.
+//dataSource.getClass() 시 어떤 커넥션풀 사용했는지 알수 있다.
+
 ```
+```dockerfile
 
-![image](https://user-images.githubusercontent.com/40969203/110239230-446a5b00-7f89-11eb-9923-04a4a1d16053.png)
-![image](https://user-images.githubusercontent.com/40969203/110239235-47654b80-7f89-11eb-8c1f-0eb2cdd41885.png)
+docker run -p 3306:3306 --name mysql_boot -e MYSQL_ROOT_PASSWORD=1 -e MYSQL_DATABASE=springboot -e MYSQL_USER=keesun -e MYSQL_PASSWORD=pass -d mysql
+docker exec -i -t mysql_boot bash
+mysql -u goldapple -p
+```
