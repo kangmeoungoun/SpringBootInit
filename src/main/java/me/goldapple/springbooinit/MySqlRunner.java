@@ -20,15 +20,6 @@ public class MySqlRunner implements ApplicationRunner{
 
     @Override
     public void run(ApplicationArguments args) throws Exception{
-        try(Connection connection = dataSource.getConnection()){
-            System.out.println(connection.getMetaData().getURL() + "!!!!");
-            System.out.println(connection.getMetaData().getUserName()+"!!!!!!!");
-            System.out.println(dataSource.getClass()+"!!!");
-            Statement statement = connection.createStatement();
-            String sql = "CREATE TABLE USER(ID INTEGER NOT NULL,NAME VARCHAR(255),PRIMARY KEY(ID))";
-            statement.execute(sql);
 
-        }
-        jdbcTemplate.execute("INSERT INTO USER VALUES(1,'GOLDAPPLE')");
     }
 }
